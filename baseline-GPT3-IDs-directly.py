@@ -33,7 +33,7 @@ if __name__ == '__main__':
     openai.api_key = "INSERT_YOUR_KEY_HERE"
     
     if ("INSERT_YOUR_KEY_HERE" == openai.api_key):
-        print ("Enter your current API key to run the script!!!")
+        print ("\n\nEnter your current API key to run the script!!!\n\n")
         exit()
 
     prefix = '''State of Palestine, country-borders-country, ["Q801"]
