@@ -28,8 +28,8 @@ def GPT3response(q):
         
 
 if __name__ == '__main__':
-    train_filepath = Path("./data/train.jsonl")
-    output_filepath = Path("./data/output.jsonl")
+    train_filepath = Path("./data/train_tiny.jsonl")
+    output_filepath = Path("./data/train_tiny_predictions.jsonl")
     openai.api_key = "INSERT_YOUR_KEY_HERE"
     
     if ("INSERT_YOUR_KEY_HERE" == openai.api_key):
