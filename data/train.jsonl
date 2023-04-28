@@ -1737,7 +1737,7 @@
 {"SubjectEntityID": "Q16862645", "SubjectEntity": "The Sword of Shannara Trilogy", "ObjectEntitiesID": ["Q10992055"], "ObjectEntities": ["speculative/fantastic fiction novel"], "Relation": "book-has-genre"}
 {"SubjectEntityID": "Q88636275", "SubjectEntity": "Space Relations: A Slightly Gothic Interplanetary Tale", "ObjectEntitiesID": ["Q24925"], "ObjectEntities": ["science fiction"], "Relation": "book-has-genre"}
 {"SubjectEntityID": "Q7732937", "SubjectEntity": "The Eyes", "ObjectEntitiesID": ["Q24925"], "ObjectEntities": ["science fiction"], "Relation": "book-has-genre"}
-{"SubjectEntityID": "Q16862766", "SubjectEntity": "Word & Void trilogy", "ObjectEntitiesID": ["Q132311"], "ObjectEntities": ["fantasy"], "Relation": "book-has-genre"}
+{"SubjectEntityID": "Q8034285", "SubjectEntity": "Word & Void trilogy", "ObjectEntitiesID": ["Q132311"], "ObjectEntities": ["fantasy"], "Relation": "book-has-genre"}
 {"SubjectEntityID": "Q7289900", "SubjectEntity": "Ramona", "ObjectEntitiesID": ["Q40831", "Q56451354"], "ObjectEntities": ["comedy", "children's fiction"], "Relation": "book-has-genre"}
 {"SubjectEntityID": "Q21051354", "SubjectEntity": "The Worlds of Star Trek: Deep Space Nine", "ObjectEntitiesID": ["Q24925"], "ObjectEntities": ["science fiction"], "Relation": "book-has-genre"}
 {"SubjectEntityID": "Q19093719", "SubjectEntity": "The Meaning of Relativity", "ObjectEntitiesID": ["Q603773"], "ObjectEntities": ["lecture"], "Relation": "book-has-genre"}
