@@ -40,5 +40,5 @@ The released dataset is primarily for understanding the format. We are making a 
 
 ### Coming soon
 
-- More baseline scripts (BERT baseline, GPT-3 baseline w/ external entity disambiguation)
+- More baseline scripts (GPT-3 baseline w/ Wikidata entity disambiguation)
 - Dataset V1 with further cleaning
