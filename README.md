@@ -24,13 +24,13 @@ For OPT-1.3b
 ```python baseline.py  --input data/val.jsonl --fill_mask_prompts prompts.csv --question_prompts question-prompts.csv  --output testrun-opt.jsonl --train_data data/train.jsonl --model facebook/opt-1.3b --batch_size 8 --gpu 0```
 
 Run instructions GPT-3 baseline:
- * Insert your OpenAI API key in line 33
- * ```python baseline-GPT3-IDs-directly.py```
+
+ ```python baseline-GPT3-IDs-directly.py" --input data/val.jsonl --output data/testrun-GPT3.jsonl -k YOUR_OPENAI_KEY_HERE```
  
 ### Evaluation script
 
 Run instructions evaluation script:
-  * ```python evaluate.py -p train_tiny_predictions.jsonl -g train_tiny.jsonl```
+  * ```python evaluate.py -p data/val.jsonl -g data/testrun-XYZ.jsonl```
 
 The first parameter hereby indicates the prediction file, the second the ground truth file.
 

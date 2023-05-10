@@ -4,6 +4,8 @@ import ast
 from file_io import *
 from evaluate import *
 import time
+import argparse
+
 
 def GPT3response(q):
     response = openai.Completion.create(
@@ -27,15 +29,9 @@ def GPT3response(q):
     return response
         
 
-if __name__ == '__main__':
-    train_filepath = Path("./val.jsonl")
-    output_filepath = Path("./val_predictions.jsonl")
-    openai.api_key = "INSERT_YOUR_KEY_HERE"
+def run(args):
+    openai.api_key = args.oaikey
     
-    if ("INSERT_YOUR_KEY_HERE" == openai.api_key):
-        print ("\n\nEnter your current API key to run the script!!!\n\n")
-        exit()
-
     prefix = '''State of Palestine, country-borders-country, ["Q801"]
     Paraguay, country-borders-country, ["Q155", "Q414", "Q750"]
     Lithuania, country-borders-country, ["Q34", "Q36", "Q159", "Q184", "Q211"]
@@ -43,7 +39,7 @@ if __name__ == '__main__':
 
     print('Starting probing GPT-3 ................')
 
-    train_df = read_lm_kbc_jsonl_to_df(train_filepath)
+    train_df = read_lm_kbc_jsonl_to_df(Path(args.input))
     
     print (train_df)
 
@@ -59,6 +55,17 @@ if __name__ == '__main__':
         }
         results.append(result)
 
-    save_df_to_jsonl(output_filepath, results)
+    save_df_to_jsonl(Path(args.output), results)
 
     print('Finished probing GPT_3 ................')
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Run the Model with Question and Fill-Mask Prompts")
+    parser.add_argument("-i", "--input", type=str, required=True, help="Input (subjects) file")
+    parser.add_argument("-o", "--output", type=str, required=True, help="Predictions (output) file")
+    parser.add_argument("-k", "--oaikey", type=str, required=True, help="OpenAI API key")
+
+    args = parser.parse_args()
+
+    run(args)
