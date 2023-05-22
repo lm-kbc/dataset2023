@@ -8,22 +8,7 @@ import numpy as np
 from file_io import *
 
 
-def is_none_gts(gts: List[str]) -> bool:
-    return not gts
-
-
-def is_none_preds(preds: List[str]) -> bool:
-    return preds is None or len(preds) == 0 or (
-            len(preds) == 1 and
-            (
-                    list(preds)[0] is None or
-                    list(preds)[0] is np.nan or
-                    list(preds)[0].lower() in {"", "none", "null"}
-            )
-    )
-
-
-def true_positives(preds: List[str], gts: List[str]) -> int:
+def true_positives(preds: List, gts: List) -> int:
     tp = 0
     for pred in preds:
         if (pred in gts):
@@ -34,31 +19,24 @@ def true_positives(preds: List[str], gts: List[str]) -> int:
 
 def precision(preds: List[str], gts: List[str]) -> float:
     # when nothing is predicted, precision 1 irrespective of the ground truth value
-    if is_none_preds(preds):
-        return 1
-
-    # When the ground truth object is none
-    if is_none_gts(gts):
-        return 1.0 if is_none_preds(preds) else 0.0
-
-    # When the ground truth object is not none
     try:
+        if len(preds)==0:
+            return 1
+        # When the ground truth object is not none
         return min(true_positives(preds, gts) / len(preds), 1.0)
     except TypeError:
-        return 0.0
+        return 0.0    
 
 
 def recall(preds: List[str], gts: List[str]) -> float:
-    # When the ground truth object is none return 1 even if there are predictions (edge case)
-    if is_none_gts(gts):
-        return 1.0
-
-    # When the ground truth object is not none
     try:
+        # When the ground truth object is none return 1 even if there are predictions (edge case)
+        if len(gts)==0:
+            return 1.0
+        # When the ground truth object is not none
         return true_positives(preds, gts) / len(gts)
     except TypeError:
         return 0.0
-
 
 def f1_score(p: float, r: float) -> float:
     try:

@@ -14,7 +14,7 @@ def GPT3response(q):
         #model = "text-curie-001",
         prompt=q,
         temperature=0,
-        max_tokens=100,
+        max_tokens=50,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0,
