@@ -22,7 +22,7 @@ def precision(preds: List[str], gts: List[str]) -> float:
     try:
         if len(preds)==0:
             return 1
-        # When the ground truth object is not none
+        # When the predictions are not empty
         return min(true_positives(preds, gts) / len(preds), 1.0)
     except TypeError:
         return 0.0    
@@ -30,10 +30,10 @@ def precision(preds: List[str], gts: List[str]) -> float:
 
 def recall(preds: List[str], gts: List[str]) -> float:
     try:
-        # When the ground truth object is none return 1 even if there are predictions (edge case)
+        # When ground truth is empty return 1 even if there are predictions (edge case)
         if len(gts)==0:
             return 1.0
-        # When the ground truth object is not none
+        # When the ground truth is not empty
         return true_positives(preds, gts) / len(gts)
     except TypeError:
         return 0.0
