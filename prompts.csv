@@ -1,22 +1,22 @@
 Relation,PromptTemplate
-footballer-play-position,{subject_entity} plays in the position of {mask_token} in football.
-compound-has-parts,{subject_entity} is composed of {mask_token}.
-person-cause-of-death,{subject_entity} died due to {mask_token}.
-country-has-states,{subject_entity} has {mask_token} as one of its states.
-river-basins-country,{subject_entity} river basins can be found in {mask_token}.
-state-shares-borders,{subject_entity} state shares its borders with {mask_token}.
-person-has-spouse,{subject_entity} is married to {mask_token}.
-literarywork-has-translation-in-language,{subject_entity} has been translated into {mask_token}.
-person-has-profession,{subject_entity} is a {mask_token} by profession.
-company-parent-org,The parent organization of {subject_entity} is {mask_token}.
-country-official-language,The official language of {subject_entity} is {mask_token}.
-person-has-autobiography,{subject_entity} wrote an autobiography titled {mask_token}.
-person-has-noble-prize,{subject_entity} received a Nobel Prize in {mask_token}.
-person-speaks-language,{subject_entity} speaks {mask_token}.
-drug-treats-condition,{subject_entity} is a drug used to treat {mask_token}.
-book-has-genre,{subject_entity} is a book belonging to the {mask_token} genre.
-person-place-of-death,{subject_entity} died in {mask_token}.
-person-has-employer,{subject_entity} is employed by {mask_token}.
-country-borders-country,{subject_entity} shares its borders with {mask_token}.
-band-has-member,{subject_entity} is a band that has {mask_token} as a member.
-person-plays-instrument,{subject_entity} plays the {mask_token} instrument.
+BandHasMember,{subject_entity} is a band that includes {mask_token} as a member.
+CityLocatedAtRiver,{subject_entity} is a city located at the {mask_token} river.
+CompanyHasParentOrganisation,The parent organization of {subject_entity} is {mask_token}.
+CountryBordersCountry,{subject_entity} shares its borders with {mask_token}.
+CountryHasOfficialLanguage,The official language of {subject_entity} is {mask_token}.
+CountryHasStates,{subject_entity} includes {mask_token} as one of its states.
+FootballerPlaysPosition,{subject_entity} plays in the position of {mask_token} in football.
+PersonCauseOfDeath,{subject_entity} died due to {mask_token}.
+PersonHasAutobiography,{subject_entity} authored an autobiography titled {mask_token}.
+PersonHasEmployer,{subject_entity} works for {mask_token}.
+PersonHasNoblePrize,{subject_entity} has been awarded the Nobel Prize in {mask_token}.
+PersonHasNumberOfChildren,{subject_entity} has {mask_token} number of children.
+PersonHasPlaceOfDeath,{subject_entity} died in {mask_token}.
+PersonHasProfession,{subject_entity} works as a {mask_token}.
+PersonHasSpouse,{subject_entity} is married to {mask_token}.
+PersonPlaysInstrument,{subject_entity} plays the {mask_token} instrument.
+PersonSpeaksLanguage,{subject_entity} is able to speak {mask_token}.
+RiverBasinsCountry,{subject_entity} river basin is located in {mask_token}.
+SeriesHasNumberOfEpisodes,The series {subject_entity} has {mask_token} episodes.
+StateBordersState,{subject_entity} state shares its borders with {mask_token}.
+CompoundHasParts,{subject_entity} is composed of {mask_token}.

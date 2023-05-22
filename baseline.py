@@ -27,12 +27,18 @@ def read_lm_kbc_jsonl(file_path: str):
 # Disambiguation baseline
 def disambiguation_baseline(item):
     try:
-        url = f"https://www.wikidata.org/w/api.php?action=wbsearchentities&search={item}&language=en&format=json"
-        data = requests.get(url).json()
-        # Return the first id (Could upgrade this in the future)
-        return data['search'][0]['id']
-    except:
-        return item
+        # If item can be converted to an integer, return it directly
+        return int(item)
+    except ValueError:
+        # If not, proceed with the Wikidata search
+        try:
+            url = f"https://www.wikidata.org/w/api.php?action=wbsearchentities&search={item}&language=en&format=json"
+            data = requests.get(url).json()
+            # Return the first id (Could upgrade this in the future)
+            return data['search'][0]['id']
+        except:
+            return item
+
 
 # Read prompt templates from a CSV file
 def read_prompt_templates_from_csv(file_path: str):
@@ -68,13 +74,15 @@ def run(args):
     tokenizer = AutoTokenizer.from_pretrained(model_type)
     model = AutoModelForMaskedLM.from_pretrained(model_type)  if "bert" in model_type.lower()  else AutoModelForCausalLM.from_pretrained(model_type)
     task = "fill-mask" if "bert" in model_type.lower() else "text-generation"    
-    pipe = pipeline(task=task, model=model, tokenizer=tokenizer, top_k=args.top_k, device=args.gpu, fp16=args.fp16)  
+     
     
     # Read the prompt templates and train data from CSV files
     if task == "text-generation":
+        pipe = pipeline(task=task, model=model, tokenizer=tokenizer, top_k=args.top_k, device=args.gpu, fp16=args.fp16) 
         logger.info(f"Reading question prompt templates from \"{args.question_prompts}\"...")
         prompt_templates = read_prompt_templates_from_csv(args.question_prompts)
     else:
+        pipe = pipeline(task=task, model=model, tokenizer=tokenizer, top_k=args.top_k, device=args.gpu) 
         logger.info(f"Reading fill-mask prompt templates from \"{args.fill_mask_prompts}\"...")
         prompt_templates = read_prompt_templates_from_csv(args.fill_mask_prompts)
     # Instantiate templates with train data
@@ -153,14 +161,14 @@ if __name__ == "__main__":
     parser.add_argument("-i", "--input", type=str, required=True, help="Input test file (required)")
     parser.add_argument("-o", "--output", type=str, required=True, help="Output file (required)")
     parser.add_argument("-k", "--top_k", type=int, default=10, help="Top k prompt outputs (default: 100)")
-    parser.add_argument("-t", "--threshold", type=float, default=0.5, help="Probability threshold (default: 0.5)")
+    parser.add_argument("-t", "--threshold", type=float, default=0.1, help="Probability threshold (default: 0.1)")
     parser.add_argument("-g", "--gpu", type=int, default=-1, help="GPU ID, (default: -1, i.e., using CPU)")
     parser.add_argument("-qp", "--question_prompts", type=str, required=True, help="CSV file containing question prompt templates (required)")
     parser.add_argument("-fp", "--fill_mask_prompts", type=str, required=True, help="CSV file containing fill-mask prompt templates (required)")
     parser.add_argument("-f", "--few_shot", type=int, default=5, help="Number of few-shot examples (default: 5)")
     parser.add_argument("--train_data", type=str, required=True, help="CSV file containing train data for few-shot examples (required)")
     parser.add_argument("--batch_size", type=int, default=32, help="Batch size for the model. (default:32)")
-    parser.add_argument("--fp16", action="store_true", help="Enable 16-bit model (default: False)")
+    parser.add_argument("--fp16", action="store_true", help="Enable 16-bit model (default: False). This is ignored for BERT.")
 
     args = parser.parse_args()
 
