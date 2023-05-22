@@ -89,3 +89,62 @@ The first parameter hereby indicates the prediction file, the second the ground 
 | PersonHasNoblePrize           100   100   100      Yes          |
 | PersonHasSpouse               100   100   100      No           |                           
 ```
+
+## Baseline performance
+
+```text
+GPT-3 (curie model)
+|                                   p      r     f1
+|-----------------------------------------------------------------|
+| BandHasMember                 0.240  0.000  0.000
+| CityLocatedAtRiver            0.000  0.000  0.000
+| CompanyHasParentOrganisation  0.000  0.000  0.000
+| CompoundHasParts              0.030  0.000  0.000
+| CountryBordersCountry         0.392  0.201  0.186
+| CountryHasOfficialLanguage    0.046  0.046  0.046
+| CountryHasStates              0.554  0.013  0.018
+| FootballerPlaysPosition       0.010  0.000  0.000
+| PersonCauseOfDeath            0.000  0.000  0.000
+| PersonHasAutobiography        0.010  0.000  0.000
+| PersonHasEmployer             0.010  0.000  0.000
+| PersonHasNoblePrize           0.030  0.000  0.000
+| PersonHasNumberOfChildren     0.200  0.200  0.200
+| PersonHasPlaceOfDeath         0.000  0.000  0.000
+| PersonHasProfession           0.050  0.021  0.028
+| PersonHasSpouse               0.000  0.000  0.000
+| PersonPlaysInstrument         0.000  0.000  0.000
+| PersonSpeaksLanguage          0.340  0.195  0.238
+| RiverBasinsCountry            0.496  0.440  0.407
+| SeriesHasNumberOfEpisodes     0.200  0.150  0.150
+| StateBordersState             0.040  0.000  0.000
+| *** Average ***               0.126  0.060  0.061
+```
+
+BERT
+
+```text
+| p   r   f1
+|-----------------------------------------------------------------|
+| BandHasMember         0.460 0.000 0.000
+| CityLocatedAtRiver      0.118 0.028 0.025
+| CompanyHasParentOrganisation 0.518 0.070 0.062
+| CompoundHasParts       0.343 0.134 0.140
+| CountryBordersCountry     0.796 0.486 0.567
+| CountryHasOfficialLanguage  0.887 0.753 0.775
+| CountryHasStates       0.174 0.000 0.000
+| FootballerPlaysPosition    0.187 0.507 0.265
+| PersonCauseOfDeath      0.022 0.040 0.027
+| PersonHasAutobiography    0.570 0.000 0.000
+| PersonHasEmployer       0.110 0.000 0.000
+| PersonHasNoblePrize      0.000 0.000 0.000
+| PersonHasNumberOfChildren   0.000 0.000 0.000
+| PersonHasPlaceOfDeath     0.208 0.130 0.108
+| PersonHasProfession      0.405 0.008 0.010
+| PersonHasSpouse        0.800 0.000 0.000
+| PersonPlaysInstrument     0.020 0.006 0.007
+| PersonSpeaksLanguage     0.552 0.678 0.569
+| RiverBasinsCountry      0.467 0.514 0.415
+| SeriesHasNumberOfEpisodes   1.000 0.000 0.000
+| StateBordersState       0.088 0.017 0.020
+| *** Average ***        0.368 0.161 0.142
+```
