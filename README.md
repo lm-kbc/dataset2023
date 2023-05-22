@@ -4,10 +4,8 @@ This repository contains dataset for the LM-KBC challenge at ISWC 2023.
 
 ## Dataset v1.0
 
-22.5.2023: Release of final dataset v1.0 (train and val), updated evaluation script and baselines
-17.4.2023: Release of preliminary dataset v0.9, evaluation script, GPT-baseline
-
-
+ - 22.5.2023: Release of final dataset v1.0 (train and val), updated evaluation script and baselines
+ - 17.4.2023: Release of preliminary dataset v0.9, evaluation script, GPT-baseline
 
 ### Baselines
 
@@ -16,15 +14,15 @@ As baselines, we provide:
  - A GPT-3 baseline that directly predicts Wikidata identifiers.
 
 Running instructions for the Huggingface baselines:
-For BERT
+ - For BERT
 
 ```python baseline.py  --input data/val.jsonl --fill_mask_prompts prompts.csv --question_prompts question-prompts.csv  --output testrun-bert.jsonl --train_data data/train.jsonl --model bert-large-cased --batch_size 32 --gpu 0```
 
-For OPT-1.3b
+ - For OPT-1.3b
 
 ```python baseline.py  --input data/val.jsonl --fill_mask_prompts prompts.csv --question_prompts question-prompts.csv  --output testrun-opt.jsonl --train_data data/train.jsonl --model facebook/opt-1.3b --batch_size 8 --gpu 0```
 
-Run instructions GPT-3 baseline:
+ - Run instructions GPT-3 baseline:
 
  ```python baseline-GPT3-IDs-directly.py" --input data/val.jsonl --output data/testrun-GPT3.jsonl -k YOUR_OPENAI_KEY_HERE```
  
