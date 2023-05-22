@@ -125,26 +125,26 @@ BERT
 ```text
 | p   r   f1
 |-----------------------------------------------------------------|
-| BandHasMember         0.460 0.000 0.000
-| CityLocatedAtRiver      0.118 0.028 0.025
-| CompanyHasParentOrganisation 0.518 0.070 0.062
-| CompoundHasParts       0.343 0.134 0.140
-| CountryBordersCountry     0.796 0.486 0.567
-| CountryHasOfficialLanguage  0.887 0.753 0.775
-| CountryHasStates       0.174 0.000 0.000
-| FootballerPlaysPosition    0.187 0.507 0.265
-| PersonCauseOfDeath      0.022 0.040 0.027
-| PersonHasAutobiography    0.570 0.000 0.000
-| PersonHasEmployer       0.110 0.000 0.000
-| PersonHasNoblePrize      0.000 0.000 0.000
-| PersonHasNumberOfChildren   0.000 0.000 0.000
-| PersonHasPlaceOfDeath     0.208 0.130 0.108
-| PersonHasProfession      0.405 0.008 0.010
-| PersonHasSpouse        0.800 0.000 0.000
-| PersonPlaysInstrument     0.020 0.006 0.007
-| PersonSpeaksLanguage     0.552 0.678 0.569
-| RiverBasinsCountry      0.467 0.514 0.415
-| SeriesHasNumberOfEpisodes   1.000 0.000 0.000
-| StateBordersState       0.088 0.017 0.020
-| *** Average ***        0.368 0.161 0.142
+| BandHasMember                 0.460 0.000 0.000
+| CityLocatedAtRiver            0.118 0.028 0.025
+| CompanyHasParentOrganisation  0.518 0.070 0.062
+| CompoundHasParts              0.343 0.134 0.140
+| CountryBordersCountry         0.796 0.486 0.567
+| CountryHasOfficialLanguage    0.887 0.753 0.775
+| CountryHasStates              0.174 0.000 0.000
+| FootballerPlaysPosition       0.187 0.507 0.265
+| PersonCauseOfDeath            0.022 0.040 0.027
+| PersonHasAutobiography        0.570 0.000 0.000
+| PersonHasEmployer             0.110 0.000 0.000
+| PersonHasNoblePrize           0.000 0.000 0.000
+| PersonHasNumberOfChildren     0.000 0.000 0.000
+| PersonHasPlaceOfDeath         0.208 0.130 0.108
+| PersonHasProfession           0.405 0.008 0.010
+| PersonHasSpouse               0.800 0.000 0.000
+| PersonPlaysInstrument         0.020 0.006 0.007
+| PersonSpeaksLanguage          0.552 0.678 0.569
+| RiverBasinsCountry            0.467 0.514 0.415
+| SeriesHasNumberOfEpisodes     1.000 0.000 0.000
+| StateBordersState             0.088 0.017 0.020
+| *** Average ***               0.368 0.161 0.142
 ```
