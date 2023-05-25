@@ -1447,7 +1447,7 @@
 {"SubjectEntityID": "Q360961", "SubjectEntity": "Natan Sharansky", "ObjectEntitiesID": ["Q5439347"], "ObjectEntities": ["Fear No Evil"], "Relation": "PersonHasAutobiography"}
 {"SubjectEntityID": "Q11486662", "SubjectEntity": "Kenshunmon-in Ch\u016bnagon", "ObjectEntitiesID": ["Q11271302"], "ObjectEntities": ["Tamakiwaru"], "Relation": "PersonHasAutobiography"}
 {"SubjectEntityID": "Q6513193", "SubjectEntity": "Lee Carlson", "ObjectEntitiesID": ["Q7142480"], "ObjectEntities": ["Passage to Nirvana"], "Relation": "PersonHasAutobiography"}
-{"SubjectEntityID": "Q6279", "SubjectEntity": "Joe Biden", "ObjectEntitiesID": ["Q100221747"], "ObjectEntities": ["Promise Me", "Dad"], "Relation": "PersonHasAutobiography"}
+{"SubjectEntityID": "Q6279", "SubjectEntity": "Joe Biden", "ObjectEntitiesID": ["Q100221747"], "ObjectEntities": ["Promise Me Dad"], "Relation": "PersonHasAutobiography"}
 {"SubjectEntityID": "Q3103862", "SubjectEntity": "Gerald Brenan", "ObjectEntitiesID": ["Q7569030"], "ObjectEntities": ["South from Granada"], "Relation": "PersonHasAutobiography"}
 {"SubjectEntityID": "Q63879", "SubjectEntity": "Chris Christie", "ObjectEntitiesID": ["Q65118068"], "ObjectEntities": ["Let Me Finish"], "Relation": "PersonHasAutobiography"}
 {"SubjectEntityID": "Q319434", "SubjectEntity": "Julian Lloyd Webber", "ObjectEntitiesID": ["Q7836112"], "ObjectEntities": ["Travels with My Cello"], "Relation": "PersonHasAutobiography"}
