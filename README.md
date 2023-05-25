@@ -63,9 +63,10 @@ The first parameter hereby indicates the prediction file, the second the ground 
 ----------------------------------------------------------------
 
 ## Dataset Characteristics
+Number of unique subject-entities in the data splits.
 
 ```text
-| Relation                    \|Train\| \|Val\| \|Test\| Has-None |
+| Relation                    |Train| |Val| |Test| Has-None       |
 |-----------------------------------------------------------------|
 | countryBordersCountry         63    63    63       No           |
 | countryHasOfficialLanguage    65    65    65       No           |
