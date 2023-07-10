@@ -12,6 +12,8 @@ This repository contains dataset for the LM-KBC challenge at ISWC 2023.
 As baselines, we provide:
  - A script that can run masked LMs and causal LMs from Huggingface in the baseline.py, use these to generate entity surface forms, and use a Wikidata API for entity disambiguation.
  - A GPT-3 baseline that directly predicts Wikidata identifiers.
+ - A GPT-3 baseline that uses Wikidata NED.
+
 
 Running instructions for the Huggingface baselines:
  - For BERT
@@ -22,9 +24,11 @@ Running instructions for the Huggingface baselines:
 
 ```python baseline.py  --input data/val.jsonl --fill_mask_prompts prompts.csv --question_prompts question-prompts.csv  --output testrun-opt.jsonl --train_data data/train.jsonl --model facebook/opt-1.3b --batch_size 8 --gpu 0```
 
- - Run instructions GPT-3 baseline:
+ - Run instructions GPT-3 baselines:
 
  ```python baseline-GPT3-IDs-directly.py" --input data/val.jsonl --output data/testrun-GPT3.jsonl -k YOUR_OPENAI_KEY_HERE```
+  ```python baseline-GPT3-NED.py" --input data/val.jsonl --output data/testrun-GPT3.jsonl -k YOUR_OPENAI_KEY_HERE```
+
  
 ### Evaluation script
 
