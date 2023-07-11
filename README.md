@@ -153,3 +153,49 @@ BERT
 | StateBordersState             0.088 0.017 0.020
 | *** Average ***               0.368 0.161 0.142
 ```
+
+
+### YOUR prediction file
+
+Your prediction file should be in the jsonl format.
+Each line of a valid prediction file contains a JSON object which must
+contain at least 3 fields to be used by the evaluation script:
+
+- ``SubjectEntity``: the subject entity (string)
+- ``Relation``: the relation (string)
+- ``ObjectEntitiesID``: the predicted object entities ID, which should be a list of Wikidata IDs (strings).
+
+You can take a look at the [example prediction file](data/dev.pred.jsonl) to
+see how a valid prediction file should look like.
+
+This is how we write our prediction file:
+
+```python
+import json
+
+# Fake predictions
+predictions = [
+    {
+        "SubjectEntity": "Dominican republic",
+        "Relation": "CountryBordersWithCountry",
+        "ObjectEntitiesID": ["Q790", "Q717", "Q30", "Q183"]
+    },
+    {
+        "SubjectEntity": "Eritrea",
+        "Relation": "CountryBordersWithCountry",
+        "ObjectEntitiesID": ["Q115"]
+    },
+    {
+        "SubjectEntity": "Estonia",
+        "Relation": "CountryBordersWithCountry",
+        "ObjectEntitiesID": []
+    }
+
+]
+
+fp = "/path/to/your/prediction/file.jsonl"
+
+with open(fp, "w") as f:
+    for pred in predictions:
+        f.write(json.dumps(pred) + "\n")
+```
