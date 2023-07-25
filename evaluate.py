@@ -31,7 +31,7 @@ def precision(preds: List[str], gts: List[str]) -> float:
 def recall(preds: List[str], gts: List[str]) -> float:
     try:
         # When ground truth is empty return 1 even if there are predictions (edge case)
-        if len(gts)==0:
+        if len(gts)==0 or gts==[""]:
             return 1.0
         # When the ground truth is not empty
         return true_positives(preds, gts) / len(gts)
